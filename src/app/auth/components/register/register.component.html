@@ -1,0 +1,43 @@
+<div class="conteiner">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="./assets/imgLogin.png" alt="Imagen" width="100%">
+    </div>
+    <div class="col-sm-6">
+      <h1 id="titulo">Bienvenidos a Inmobiliaria Mis Casitas</h1>
+      <p id="title-register" class="h3 text-center m-3">Registro</p>
+      <div class="mx-auto text-center">
+        <img class="mx-auto text-center rounded-circle m-3" src="./assets/imgLogin.png" alt="imagen de perfil" height="100px" width="100px">
+      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)" action="">
+        <div class="form-floating mb-3">
+          <input type="text" formControlName="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Nombre completo</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" formControlName="usuario" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Nombre usuario</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" formControlName="identificacion" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Identificación</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="date" formControlName="fechaNacimiento" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Fecha de nacimiento</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Registrarme</button>
+      </form>
+
+      <p class="text-center mt-3">Ya estoy registrado, <a id="login-a" href="">login</a></p>
+
+      
+    </div>
+  </div>
+
+</div>

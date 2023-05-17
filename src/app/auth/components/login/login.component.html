@@ -1,0 +1,36 @@
+<div class="conteiner">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="./assets/imgLogin.png" alt="Imagen" width="100%">
+    </div>
+    <div class="col-sm-6">
+      <h1 id="titulo">Bienvenidos a Inmobiliaria Mis Casitas</h1>
+      <p id="title-login" class="h3 text-center m-3">Iniciar sesión</p>
+      <form [formGroup]="dataUser" (ngSubmit)="loginUser(dataUser.value)" action="">
+        <div class="form-floating mb-3">
+          <input type="text" formControlName="usuario" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput">Usuario</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+        <div class="row m-3">
+          <div class="col-sm-6">
+            <p class="text-center"><a href="">Recuerdame</a></p>
+          </div>
+          <div class="col-sm-6">
+            <p class="text-center"><a href="">Olvide mi contraseña</a></p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Ingresar</button>
+      </form>
+
+      <p class="text-center mt-3">¿No tienes cuenta?, <a href="">registrate</a></p>
+
+      
+    </div>
+  </div>
+
+</div>

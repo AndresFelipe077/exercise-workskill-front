@@ -1,0 +1,58 @@
+#name-project{
+  color:white;
+}
+
+#nav-enlace{
+  color:white;
+}
+
+#primerItem
+{
+  margin-left:45%;
+}
+
+nav{
+  background-color:#39a900 !important;
+}
+
+#registro
+{
+  background-color:#ffffff;
+  color: #39a900;
+  margin-right: 10px;
+}
+
+#iniciarsesion
+{
+  background-color:#ffffff;
+  color: #39a900;
+}
+
+
+#img-inda-ex{
+  position:relative;
+}
+
+span
+{
+  position: absolute;
+  top:30%;
+
+}
+.contenedor{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.texto-encima{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.centrado{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
