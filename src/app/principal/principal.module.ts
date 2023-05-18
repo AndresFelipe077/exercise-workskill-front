@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PrincipalRoutingModule } from './principal-routing.module';
-import { IndexComponent } from './components/index/index.component';
+// import { IndexComponent } from './components/index/index.component';
 
 
 @NgModule({
   declarations: [
-    IndexComponent
+    // IndexComponent
   ],
   imports: [
     CommonModule,

@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/service/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-login',
@@ -16,6 +19,7 @@ export class LoginComponent implements OnInit {
     private http: HttpClient,
     private login: LoginService,
     private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +34,7 @@ export class LoginComponent implements OnInit {
     this.login.login(userData).subscribe(
       (response: any) => {
         console.log(response);
+        this.router.navigate(['/dashboard']);
       },
       (error: any) => {
         console.log(error);

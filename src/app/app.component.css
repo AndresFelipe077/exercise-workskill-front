@@ -1,0 +1,81 @@
+#name-project{
+  color:white;
+}
+
+.text-color{
+  color: #39a900;
+}
+
+#nav-enlace{
+  color:white;
+}
+
+#primerItem
+{
+  margin-left:45%;
+}
+
+nav{
+  background-color:#39a900 !important;
+}
+
+#registro
+{
+  background-color:#ffffff;
+  color: #39a900;
+  margin-right: 10px;
+}
+
+#iniciarsesion
+{
+  background-color:#ffffff;
+  color: #39a900;
+}
+
+
+#img-inda-ex{
+  position:relative;
+}
+
+span
+{
+  position: absolute;
+  top:30%;
+
+}
+
+.contenedor {
+  position: relative;
+  display: inline-block;
+}
+
+.texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #39a900;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 10px;
+}
+
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+.card {
+  position: relative;
+}
+
+.card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+}
