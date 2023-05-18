@@ -8,21 +8,27 @@ import { IndexComponent } from './principal/components/index/index.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    IndexComponent
+    IndexComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
-    // LoginComponent
+    ReactiveFormsModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
+
 })
 export class AppModule { }
