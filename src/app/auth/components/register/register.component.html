@@ -7,10 +7,11 @@
     <div class="col-sm-6">
       <h1 id="titulo">Bienvenidos a Inmobiliaria Mis Casitas</h1>
       <p id="title-register" class="h3 text-center m-3">Registro</p>
-      <div class="mx-auto text-center">
-        <img class="mx-auto text-center rounded-circle m-3" src="./assets/imgLogin.png" alt="imagen de perfil" height="100px" width="100px">
-      </div>
-      <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)" action="">
+      <form [formGroup]="registerForm" (ngSubmit)="registerUser()" action="">
+        <div class="mx-auto text-center">
+          <img class="mx-auto text-center rounded-circle m-3" src="./assets/imgLogin.png" alt="imagen de perfil" height="100px" width="100px">
+          <input type="file" id="urlFoto" formControlName="urlFoto" (change)="onFileSelected($event)">
+        </div>
         <div class="form-floating mb-3">
           <input type="text" formControlName="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
           <label for="floatingInput">Nombre completo</label>
@@ -31,7 +32,7 @@
           <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Password">
           <label for="floatingPassword">Contraseña</label>
         </div>
-        <button type="submit" class="btn btn-success w-100">Registrarme</button>
+        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-success w-100">Registrarme</button>
       </form>
 
       <p class="text-center mt-3">Ya estoy registrado, <a id="login-a" href="">login</a></p>
