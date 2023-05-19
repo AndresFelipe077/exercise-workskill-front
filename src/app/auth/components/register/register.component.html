@@ -9,8 +9,8 @@
       <p id="title-register" class="h3 text-center m-3">Registro</p>
       <form [formGroup]="registerForm" (ngSubmit)="registerUser()" action="">
         <div class="mx-auto text-center">
-          <img class="mx-auto text-center rounded-circle m-3" src="./assets/imgLogin.png" alt="imagen de perfil" height="100px" width="100px">
-          <input type="file" id="urlFoto" formControlName="urlFoto" (change)="onFileSelected($event)">
+          <img class="mx-auto text-center rounded-circle m-3" src="./assets/imgLogin.png" alt="imagen de perfil" height="100px" width="100px"><br>
+          <input class="mb-3" type="file" id="urlFoto" formControlName="urlFoto" (change)="onFileSelected($event)">
         </div>
         <div class="form-floating mb-3">
           <input type="text" formControlName="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -35,9 +35,9 @@
         <button type="submit" [disabled]="!registerForm.valid" class="btn btn-success w-100">Registrarme</button>
       </form>
 
-      <p class="text-center mt-3">Ya estoy registrado, <a id="login-a" href="">login</a></p>
+      <p class="text-center mt-3">Ya estoy registrado, <a id="login-a" [routerLink]="['/login']" routerLinkActive="router-link-active" >login</a></p>
 
-      
+
     </div>
   </div>
 
