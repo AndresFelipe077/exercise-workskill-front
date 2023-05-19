@@ -9,7 +9,8 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'dashboard', component: IndexComponent }
+  { path: '', component: IndexComponent },
+  { path: '**', component: IndexComponent },
 
 ];
 

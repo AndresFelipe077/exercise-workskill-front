@@ -16,14 +16,17 @@
         <li class="nav-item">
           <a id="nav-enlace" class="nav-link" href="#">Contacto</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!userLoginOn">
           <a id="registro" class="nav-link btn btn" routerLink="/register">Registrarse</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!userLoginOn">
           <a id="iniciarsesion" class="nav-link btn btn" routerLink="/login">Iniciar sesión</a>
         </li>
-        <li class="nav-item">
-          <a id="nav-enlace" class="nav-link btn btn" href="#">Chat</a>
+        <li class="nav-item"  *ngIf="userLoginOn">
+          <a id="iniciarsesion" (click)="cerrarSesion" class="nav-link btn btn" routerLink="/login">Cerrar sesión</a>
+        </li>
+        <li class="nav-item" *ngIf="userLoginOn">
+          <a id="nav-enlace" (click)="cerrarSesion()" class="nav-link btn btn" href="#">Chat</a>
         </li>
       </ul>
     </div>
@@ -31,46 +34,6 @@
 </nav>
 
 <router-outlet></router-outlet>
-
-<div class="contenedor w-100">
-  <img class="w-100 " src="./assets/index.jpg" alt="" width="100%">
-  <div class="texto">Encuentra tu lugar ideal</div>
-</div>
-
-
-<div class="container">
-  <p class="h2 text-color">Categorias</p>
-  <div class="row">
-    <div class="col-sm-6">
-      <div>
-        <h4 class="text-color">Cabañas</h4>
-        <img src="./assets/1.jpg" alt="" width="100%">
-      </div>
-      <div>
-        <h4 class="text-color">Casa familiar</h4>
-        <img src="./assets/3.jpg" alt="" width="100%">
-      </div>
-
-    </div>
-    <div class="col-sm-6">
-      <div>
-        <h4 class="text-color">Casa ecologica</h4>
-        <img src="./assets/2.jpg" alt="" width="100%">
-      </div>
-      <div>
-        <h4 class="text-color">Casa prefabricada</h4>
-        <img src="./assets/4.jpg" alt="" width="100%">
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<div class="container">
-  <p class="h2 text-color">Casas disponibles</p>
-
-</div>
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted text-color">
