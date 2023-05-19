@@ -11,6 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
+  
+
   registerForm: FormGroup = new FormGroup({});
 
   selectedFile: File | null = null;
@@ -38,6 +40,7 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  
 
   registerUser() {
     if (this.registerForm.valid) {
