@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { CasasComponent } from './casas/components/casas/casas.component';
+import { AlquilarCasaComponent } from './casas/components/alquilar-casa/alquilar-casa.component';
+import { CasasCabanasComponent } from './casas/components/casas-cabanas/casas-cabanas.component';
+import { CasasEcologicasComponent } from './casas/components/casas-ecologicas/casas-ecologicas.component';
+import { CasasPrefabricadasComponent } from './casas/components/casas-prefabricadas/casas-prefabricadas.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +23,15 @@ import { CasasComponent } from './casas/components/casas/casas.component';
     LoginComponent,
     RegisterComponent,
     IndexComponent,
-    CasasComponent
-
+    CasasComponent,
+    AlquilarCasaComponent,
+    CasasCabanasComponent,
+    CasasEcologicasComponent,
+    CasasEcologicasComponent,
+    CasasPrefabricadasComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,

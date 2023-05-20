@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,7 +10,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class IndexComponent {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router:Router
+  ) { }
 
   casasDisponibles!: any[];
 
@@ -35,6 +39,13 @@ export class IndexComponent {
       });
     });
   }
+
+  verCasa(id: number) {
+    // Aquí puedes redirigir a la página de detalles de la casa utilizando la ID
+    // Por ejemplo, puedes utilizar el enrutador de Angular:
+    this.router.navigate(['/alquilar-casa', id]);
+  }
+  
   
   
 

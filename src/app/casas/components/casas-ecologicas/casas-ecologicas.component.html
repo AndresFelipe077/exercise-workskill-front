@@ -1,1 +1,10 @@
-<p>casas-ecologicas works!</p>
+<h1 class="text-center" style="color: #39a900;">Casas ecologicas</h1>
+<div class="row m-2">
+  <div class="col-md-4" *ngFor="let casasEcologica of casasEcologicas">
+    <div class="pointer a" [routerLink]="['/alquilar-casa/', casasEcologica.id]">
+      <img class="pointer rounded" [src]="casasEcologica.urlFoto" alt="" width="400px">
+      <h5>Costo alquiler: {{ casasEcologica.costoAlquiler }}</h5>
+      <p>Descripción: {{ casasEcologica.descripcion }}</p>
+    </div>
+  </div>
+</div>

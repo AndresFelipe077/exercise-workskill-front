@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RegisterService } from 'src/app/service/register.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AppComponent } from 'src/app/app.component';
 
 
 @Component({
@@ -24,7 +26,9 @@ export class RegisterComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private register: RegisterService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private appComponent: AppComponent
   ) { }
 
 
@@ -62,6 +66,9 @@ export class RegisterComponent implements OnInit {
           const tokenType = response.token_type;
   
           localStorage.setItem('access_token', accessToken);
+          this.router.navigate(['/dashboard']);
+          this.registerForm.reset();
+          this.appComponent.userLoginOn = true;
         },
         (error: any) => {
           console.log(error);

@@ -9,6 +9,7 @@ import { CasasCabanasComponent } from './components/casas-cabanas/casas-cabanas.
 import { CasasPrefabricadasComponent } from './components/casas-prefabricadas/casas-prefabricadas.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AlquilarCasaComponent } from './components/alquilar-casa/alquilar-casa.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     CasasEcologicasComponent,
     CasasFamiliarComponent,
     CasasCabanasComponent,
-    CasasPrefabricadasComponent
+    CasasPrefabricadasComponent,
+    AlquilarCasaComponent
   ],
   imports: [
     CommonModule,

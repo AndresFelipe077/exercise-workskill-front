@@ -1,0 +1,8 @@
+<div *ngIf="casa">
+  <img class="pointer" [src]="casa.urlFoto" alt="">
+  <h5>Costo alquiler: {{ casa.costoAlquiler }}</h5>
+  <p>Descripción: {{ casa.descripcion }}</p>
+  <p>Categoría: {{ casa.categoria.nombre }}</p>
+  <p>Estado: {{ casa.estado.nombre }}</p>
+  <!-- Mostrar otros detalles de la casa según sea necesario -->
+</div>

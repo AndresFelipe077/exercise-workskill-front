@@ -1,1 +1,11 @@
-<p>casas-cabanas works!</p>
+<h1 class="text-center" style="color: #39a900;">Cabañas</h1>
+<div class="row m-2">
+  <div class="col-md-4" *ngFor="let cabana of casasCabanas">
+    <div class="pointer a" [routerLink]="['/alquilar-casa/', cabana.id]">
+      <img class="pointer rounded" [src]="cabana.urlFoto" alt="" width="400px">
+      <h5>Costo alquiler: {{ cabana.costoAlquiler }}</h5>
+      <p>Descripción: {{ cabana.descripcion }}</p>
+    </div>
+  </div>
+</div>
+

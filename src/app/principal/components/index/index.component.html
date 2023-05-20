@@ -9,23 +9,23 @@
   <div class="row">
     <div class="col-sm-6">
       <div>
-        <h4 class="text-color">Cabañas</h4>
-        <img src="./assets/1.jpg" alt="" width="100%">
+        <h4 [routerLink]="['/cabañas']" class="text-color">Cabañas</h4>
+        <img [routerLink]="['/cabañas']" src="./assets/1.jpg" alt="" width="100%">
       </div>
       <div>
-        <h4 class="text-color">Casa familiar</h4>
-        <img src="./assets/3.jpg" alt="" width="100%">
+        <h4 [routerLink]="['/casas-familiares']" class="text-color">Casa familiar</h4>
+        <img [routerLink]="['/casas-familiares']" src="./assets/3.jpg" alt="" width="100%">
       </div>
 
     </div>
     <div class="col-sm-6">
       <div>
-        <h4 class="text-color">Casa ecologica</h4>
-        <img src="./assets/2.jpg" alt="" width="100%">
+        <h4 [routerLink]="['/casas-ecologicas']" class="text-color">Casa ecologica</h4>
+        <img [routerLink]="['/casas-ecologicas']" src="./assets/2.jpg" alt="" width="100%">
       </div>
       <div>
-        <h4 class="text-color">Casa prefabricada</h4>
-        <img src="./assets/4.jpg" alt="" width="100%">
+        <h4 [routerLink]="['/casas-prefabricadas']" class="text-color">Casa prefabricada</h4>
+        <img [routerLink]="['/casas-prefabricadas']" src="./assets/4.jpg" alt="" width="100%">
       </div>
 
     </div>
@@ -69,10 +69,12 @@
 
 
   <div *ngFor="let casa of casasDisponibles">
-    <img [src]="casa.urlFoto" alt="">
-    <h5>{{ casa.costoAlquiler }}</h5>
-    <p>{{ casa.descricion }}</p>
-    <!-- Agrega aquí el código HTML para mostrar la imagen de la casa -->
+    <div class="pointer a" [routerLink]="['/alquilar-casa/' + casa.id]" >
+      <img class="pointer" [src]="casa.urlFoto" alt="">
+      <h5>Costo alquiler: {{ casa.costoAlquiler }}</h5>
+      <p>Descripción: {{ casa.descricion }}</p>
+    </div>
+<!-- [routerLink]="['/alquilar-casa']"  -->
   </div>
 
 </div>
