@@ -1,0 +1,59 @@
+<div>
+  <form [formGroup]="casasForm" (ngSubmit)="crearCasa()" action="">
+
+    <div class="mx-auto text-center">
+      <img class="mx-auto text-center rounded-circle m-3" src="./assets/imgLogin.png" alt="imagen de perfil"
+        height="100px" width="100px"><br>
+      <input class="mb-3" type="file" id="urlFoto" formControlName="urlFoto" (change)="onFileSelected($event)">
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" formControlName="direccion" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Direccion</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="costoAlquiler" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Costo de alquiler</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="ancho" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Ancho de la casa</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="largo" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Largo de la casa</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="numeroPisos" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Número de pisos</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" formControlName="descripcion" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">descripcion</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="capacidad" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Capacidad</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="idCategoria" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Categoria</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="idEstado" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Estado</label>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Ingresar</button>
+
+
+  </form>
+</div>
