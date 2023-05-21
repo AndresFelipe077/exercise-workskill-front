@@ -15,7 +15,8 @@
     </div> -->
     <div class="col-sm-6">
 
-      <a class="btn btn text-white" style="background-color: #39a900;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <a class="btn btn text-white" style="background-color: #39a900;" data-bs-toggle="collapse" href="#collapseExample"
+        role="button" aria-expanded="false" aria-controls="collapseExample">
         Alquilar casa
       </a>
 
@@ -27,22 +28,18 @@
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
 
-    <form action="">
-
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Fecha Inicio</label>
-          <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Fecha Fin</label>
-          <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <button type="submit" class="btn btn text-white" style="background-color: #39a900;">Alquilar</button>
-      </form>
-
+    <form [formGroup]="alquilarCas" (ngSubmit)="alquilarCasa()" action="">
+      <div class="mb-3">
+        <label for="fechaInicio" class="form-label">Fecha Inicio</label>
+        <input type="date" formControlName="fechaInicio" class="form-control" id="fechaInicio" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="fechaFin" class="form-label">Fecha Fin</label>
+        <input type="date" formControlName="fechaFin" class="form-control" id="fechaFin" aria-describedby="emailHelp">
+      </div>
+      <button type="submit" class="btn btn text-white" style="background-color: #39a900;">Alquilar</button>
     </form>
+    
 
   </div>
 </div>
-

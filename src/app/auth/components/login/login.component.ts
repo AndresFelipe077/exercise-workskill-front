@@ -4,6 +4,7 @@ import { LoginService } from 'src/app/service/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,9 @@ export class LoginComponent implements OnInit {
     private login: LoginService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private appComponent:AppComponent,
+    private appComponent: AppComponent,
+    private userService: UserService,
+
   ) { }
 
   ngOnInit(): void {
@@ -30,13 +33,16 @@ export class LoginComponent implements OnInit {
     this.cerrarSesion();
   }
 
-  loginUser(userData: any)
-  {
+  loginUser(userData: any) {
     this.login.login(userData).subscribe(
       (response: any) => {
         console.log(response);
         this.router.navigate(['/dashboard']);
         this.dataUser.reset();
+        // const userId = response.user.id; // Obtener el ID del usuario desde la respuesta
+        // localStorage.setItem('userId', userId);
+        // this.userService.setUserId(response.user.id); // Guardar el ID del usuario en localStorage
+        this.userService.saveUserData(response);
         this.appComponent.userLoginOn = true;
       },
       (error: any) => {
@@ -45,7 +51,8 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  cerrarSesion(){
+
+  cerrarSesion() {
     this.appComponent.userLoginOn = false;
   }
 

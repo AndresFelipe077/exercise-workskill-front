@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 
 
 @Component({
@@ -8,17 +9,28 @@ import { Router } from '@angular/router';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent {
+export class IndexComponent implements OnInit{
+
+  userId!: string;
+
+  userData!: any;
+
 
   constructor(
     private http: HttpClient,
-    private router:Router
-  ) { }
+    private router:Router,
+    private userService: UserService,
+
+  ) { 
+    // this.userId = this.userService.getUserId();
+  }
 
   casasDisponibles!: any[];
 
   ngOnInit() {
     this.obtenerCasasDisponibles();
+    this.userData = this.userService.getUserData();
+    console.log(this.userData);
   }
   
   // obtenerCasasDisponibles() {

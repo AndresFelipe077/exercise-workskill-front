@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs';
 
@@ -40,7 +40,6 @@ export class CasasService {
       );
   }
 
-
   getCasaEcologicas(): Observable<any[]> {
     return this.http.get<any[]>(this.url + '/casas-ecologicas')
       .pipe(
@@ -77,5 +76,18 @@ export class CasasService {
       );
   }
   
+  // alquilarCasa(id: number)
+  // {
+  //   return this.http.post(this.apiUrl + '/alquilar/', {id: id});
+  // }
+
+  alquilarCasa(id: number, alquilerData: any): Observable<any> {
+    const url = `${this.apiUrl}/alquilar/${id}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http.post(url, alquilerData, { headers });
+  }
 
 }

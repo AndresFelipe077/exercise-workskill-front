@@ -13,8 +13,6 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class RegisterComponent implements OnInit {
 
-  
-
   registerForm: FormGroup = new FormGroup({});
 
   selectedFile: File | null = null;
@@ -43,8 +41,6 @@ export class RegisterComponent implements OnInit {
 
     })
   }
-
-  
 
   registerUser() {
     if (this.registerForm.valid) {
@@ -79,5 +75,4 @@ export class RegisterComponent implements OnInit {
     }
   }
   
-
 }
