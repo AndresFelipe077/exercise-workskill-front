@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CasasService } from 'src/app/service/casas.service';
+import { CategoriaService } from 'src/app/service/categoria.service';
+import { EstadoService } from 'src/app/service/estado.service';
 
 @Component({
   selector: 'app-casas',
@@ -13,9 +15,15 @@ export class CasasComponent implements OnInit {
 
   casas!: any[];
 
+  categorias: any[] = [];
+
+  estados: any[] = [];
+
   constructor(
     private _casasService: CasasService,
     private formBuilder: FormBuilder,
+    private _categoriasService:CategoriaService,
+    private _estadosService:EstadoService
   ) { }
 
   selectedFile: File | null = null;
@@ -27,6 +35,9 @@ export class CasasComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.getCategorias();
+    this.getEstados();
+
     this.casasForm = this.formBuilder.group({
       urlFoto: ['', Validators.required],
       direccion: ['', Validators.required],
@@ -36,9 +47,8 @@ export class CasasComponent implements OnInit {
       numeroPisos: ['', Validators.required],
       descripcion: ['', Validators.required],
       capacidad: ['', Validators.required],
-      idCategoria: ['', Validators.required],
-      idEstado: ['', Validators.required],
-
+      idCategoria: ['Categoria', Validators.required],
+      idEstado: ['Estado', Validators.required],
     })
   }
 
@@ -69,6 +79,28 @@ export class CasasComponent implements OnInit {
     }
   }
   
-  
+  getCategorias()
+  {
+    this._categoriasService.getCategorias().subscribe(
+      data => {
+        this.categorias = data;
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+
+  getEstados()
+  {
+    this._estadosService.getEstados().subscribe(
+      data => { 
+        this.estados = data;
+      }, 
+      error => {
+        console.log(error)
+      }
+    )
+  }
 
 }

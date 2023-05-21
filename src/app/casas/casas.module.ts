@@ -10,7 +10,7 @@ import { CasasPrefabricadasComponent } from './components/casas-prefabricadas/ca
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AlquilarCasaComponent } from './components/alquilar-casa/alquilar-casa.component';
-
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { AlquilarCasaComponent } from './components/alquilar-casa/alquilar-casa.
     CommonModule,
     CasasRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterLink
   ],
   exports:[
     CasasModule,

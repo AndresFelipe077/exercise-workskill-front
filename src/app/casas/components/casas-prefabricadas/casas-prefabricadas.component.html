@@ -1,1 +1,7 @@
-<p>casas-prefabricadas works!</p>
+<h1 class="text-center">Casas prefabricadas</h1>
+<div class="row m-2">
+  <div class="col-md-4 pointer" *ngFor="let casaPrefabricada of casasPrefabricadas">
+    <img [src]="casaPrefabricada.urlFoto" alt="" [routerLink]="['/alquilar-casa/' + casaPrefabricada.id]" routerLinkActive="router-link-active" >
+    <p >{{ casaPrefabricada.descripcion }}</p>
+  </div>
+</div>

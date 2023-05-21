@@ -1,8 +1,48 @@
-<div *ngIf="casa">
+<div *ngIf="casa" class="text-center">
   <img class="pointer" [src]="casa.urlFoto" alt="">
   <h5>Costo alquiler: {{ casa.costoAlquiler }}</h5>
   <p>Descripción: {{ casa.descripcion }}</p>
   <p>Categoría: {{ casa.categoria.nombre }}</p>
   <p>Estado: {{ casa.estado.nombre }}</p>
-  <!-- Mostrar otros detalles de la casa según sea necesario -->
+
+  <div class="row text-center">
+
+    <div class="col-sm-6">
+      <a class="btn btn-danger" [routerLink]="['/dashboard']">Regresar</a>
+    </div>
+    <!-- <div class="col-sm-6">
+      <a class="btn btn-success" [routerLink]="['/routePath/' + casa.id]" >Quiero alquilar</a>
+    </div> -->
+    <div class="col-sm-6">
+
+      <a class="btn btn text-white" style="background-color: #39a900;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Alquilar casa
+      </a>
+
+    </div>
+
+  </div>
 </div>
+
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+
+    <form action="">
+
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Fecha Inicio</label>
+          <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Fecha Fin</label>
+          <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" class="btn btn text-white" style="background-color: #39a900;">Alquilar</button>
+      </form>
+
+    </form>
+
+  </div>
+</div>
+

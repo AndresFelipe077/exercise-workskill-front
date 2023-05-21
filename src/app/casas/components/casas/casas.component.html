@@ -41,16 +41,23 @@
         placeholder="name@example.com">
       <label for="floatingInput">Capacidad</label>
     </div>
-    <div class="form-floating mb-3">
+
+
+    <!-- <div class="form-floating mb-3">
       <input type="number" formControlName="idCategoria" class="form-control" id="floatingInput"
         placeholder="name@example.com">
       <label for="floatingInput">Categoria</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input type="number" formControlName="idEstado" class="form-control" id="floatingInput"
-        placeholder="name@example.com">
-      <label for="floatingInput">Estado</label>
-    </div>
+    </div> -->
+
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="idCategoria">
+      <option selected>Categoria</option>
+      <option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.nombre }}</option>
+    </select>
+
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="idEstado">
+      <option selected>Estado</option>
+      <option *ngFor="let estado of estados" [value]="estado.id">{{ estado.nombre }}</option>
+    </select>
 
     <button type="submit" class="btn btn-success w-100">Ingresar</button>
 

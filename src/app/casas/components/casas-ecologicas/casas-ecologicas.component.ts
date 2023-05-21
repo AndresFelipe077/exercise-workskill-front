@@ -17,13 +17,14 @@ export class CasasEcologicasComponent implements OnInit {
   casasEcologicas: any[] = [];
 
   ngOnInit(): void {
-
+    this.getCasasEcologicas();
   }
 
   getCasasEcologicas() {
     this.casaService.getCasaEcologicas().subscribe(
       casaEcologica => {
         this.casasEcologicas = casaEcologica;
+        console.log(casaEcologica)
       },
       error => {
         console.log(error);
