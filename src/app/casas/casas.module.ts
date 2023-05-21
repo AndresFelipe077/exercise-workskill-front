@@ -11,6 +11,8 @@ import { CasasPrefabricadasComponent } from './components/casas-prefabricadas/ca
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AlquilarCasaComponent } from './components/alquilar-casa/alquilar-casa.component';
 import { RouterLink } from '@angular/router';
+import { MisCasasComponent } from './components/mis-casas/mis-casas.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RouterLink } from '@angular/router';
     CasasFamiliarComponent,
     CasasCabanasComponent,
     CasasPrefabricadasComponent,
-    AlquilarCasaComponent
+    AlquilarCasaComponent,
+    MisCasasComponent,
+    UserprofileComponent
   ],
   imports: [
     CommonModule,

@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
+  baseUrl = 'http://localhost:8000/storage/';
+
+
   private userId: string;
   private readonly userIdKey = 'userId';
 
@@ -33,13 +36,30 @@ export class UserService {
     localStorage.setItem(this.userDataKey, JSON.stringify(userData));
   }
 
+  // getUserData(): any {
+  //   const storedData = localStorage.getItem(this.userDataKey);
+  //   if (storedData) {
+  //     const userData = JSON.parse(storedData);
+  //     const nuevaRuta = '/localhost:8000' + userData.user.urlFoto;
+  //     userData.user.urlFoto = nuevaRuta;
+  //     return userData;
+  //     return userData;
+  //   }
+  //   return null;
+  // }
+
+
   getUserData(): any {
     const storedData = localStorage.getItem(this.userDataKey);
     if (storedData) {
-      return JSON.parse(storedData);
+      const userData = JSON.parse(storedData);
+      const nuevaRuta = this.baseUrl + userData.user.urlFoto;
+      userData.user.urlFoto = nuevaRuta;
+      return userData;
     }
     return null;
   }
+  
 
   clearUserData(): void {
     localStorage.removeItem(this.userDataKey);
