@@ -37,11 +37,15 @@ export class LoginComponent implements OnInit {
     this.login.login(userData).subscribe(
       (response: any) => {
         console.log(response);
-        this.router.navigate(['/dashboard']);
+        if(response.user.rol == "admin")
+        {
+          this.router.navigate(['/gestionar-casas']);
+        }
+        else
+        {
+          this.router.navigate(['/dashboard']);
+        }
         this.dataUser.reset();
-        // const userId = response.user.id; // Obtener el ID del usuario desde la respuesta
-        // localStorage.setItem('userId', userId);
-        // this.userService.setUserId(response.user.id); // Guardar el ID del usuario en localStorage
         this.userService.saveUserData(response);
         this.appComponent.userLoginOn = true;
       },

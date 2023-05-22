@@ -3,7 +3,7 @@
 }
 
 .text-color{
-  color: #39a900;
+  color: white;
 }
 
 #nav-enlace{
@@ -15,21 +15,39 @@
   margin-left:45%;
 }
 
-nav{
+.navUser{
   background-color:#39a900 !important;
+}
+
+.navAdmin{
+  background-color:#fc7323 !important;
+
 }
 
 #registro
 {
   background-color:#ffffff;
-  color: #39a900;
+  color: #39a900 !important;
   margin-right: 10px;
 }
 
 #iniciarsesion
 {
   background-color:#ffffff;
-  color: #39a900;
+  color: #39a900 !important;
+}
+
+#registro-admin
+{
+  background-color:#e1e1e1;
+  color: #fc7323;
+  margin-right: 10px;
+}
+
+#iniciarsesion-admin
+{
+  background-color:#e1e1e1;
+  color: #fc7323;
 }
 
 
@@ -79,3 +97,20 @@ span
   color: white;
   padding: 10px;
 }
+
+
+/* Estilos para el rol de administrador */
+.text-color-admin {
+  color: #e1e1e1;
+}
+
+.navAdmin {
+  background-color: #fc7323;
+}
+
+/* Estilos para el rol de usuario regular */
+.user {
+  background-color: #39a900 !important;
+  color: white;
+}
+

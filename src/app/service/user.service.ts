@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +8,8 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   baseUrl = 'http://localhost:8000/storage/';
+  url = 'http://localhost:8000/';
+
 
 
   private userId: string;
@@ -14,7 +18,10 @@ export class UserService {
 
   private readonly userDataKey = 'userData';
 
-  constructor() {
+  constructor(
+    private http: HttpClient,
+
+  ) {
     this.userId = localStorage.getItem(this.userIdKey)!;
   }
 
@@ -64,6 +71,17 @@ export class UserService {
   clearUserData(): void {
     localStorage.removeItem(this.userDataKey);
   }
+
+
+  actualizarProfile(id:number, userData: any){
+
+    const url = this.url + 'api/user/' + id;
+
+    return this.http.put(url, userData);
+
+  }
+
+ 
 
 
 }

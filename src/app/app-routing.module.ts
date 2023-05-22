@@ -11,6 +11,7 @@ import { CasasEcologicasComponent } from './casas/components/casas-ecologicas/ca
 import { CasasFamiliarComponent } from './casas/components/casas-familiar/casas-familiar.component';
 import { CasasPrefabricadasComponent } from './casas/components/casas-prefabricadas/casas-prefabricadas.component';
 import { UserProfileComponent } from './auth/components/user-profile/user-profile.component';
+import { GestionarCasasComponent } from './admin/components/gestionar-casas/gestionar-casas.component';
 
 const routes: Routes = [
 
@@ -31,6 +32,8 @@ const routes: Routes = [
   { path: 'casas-familiares', component:CasasFamiliarComponent},
 
   { path: 'casas-prefabricadas', component:CasasPrefabricadasComponent},
+
+  { path: 'gestionar-casas', component: GestionarCasasComponent },
 
   { path: '', component: IndexComponent },
   { path: '**', component: IndexComponent },

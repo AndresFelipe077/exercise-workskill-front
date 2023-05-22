@@ -17,6 +17,8 @@ import { CasasCabanasComponent } from './casas/components/casas-cabanas/casas-ca
 import { CasasEcologicasComponent } from './casas/components/casas-ecologicas/casas-ecologicas.component';
 import { CasasPrefabricadasComponent } from './casas/components/casas-prefabricadas/casas-prefabricadas.component';
 import { CasasFamiliarComponent } from './casas/components/casas-familiar/casas-familiar.component';
+import { UserProfileComponent } from './auth/components/user-profile/user-profile.component';
+import { GestionarCasasComponent } from './admin/components/gestionar-casas/gestionar-casas.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { CasasFamiliarComponent } from './casas/components/casas-familiar/casas-
     CasasCabanasComponent,
     CasasFamiliarComponent,
     CasasEcologicasComponent,
-    CasasPrefabricadasComponent
+    CasasPrefabricadasComponent,
+    UserProfileComponent,
+    GestionarCasasComponent
+    
   ],
   imports: [
     CommonModule,

@@ -8,35 +8,35 @@
 
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-6 mb-3">
 
-      <form action="">
+      <form class="mb-3" [formGroup]="userProfile" (ngSubmit)="actualizarProfile()">
 
-        <div class="mx-auto text-center">
-          <img class="mx-auto text-center rounded-circle m-3" src="./assets/imgLogin.png" alt="imagen de perfil" height="100px" width="100px"><br>
-          <input class="mb-3" type="file" id="urlFoto" formControlName="urlFoto" ><!--(change)="onFileSelected($event)"-->
-        </div>
-        <div class="form-floating mb-3">
+        <!-- <div class="mx-auto text-center">
+          <input class="mb-3" type="file" id="urlFoto" (change)="onSelectedFile($event)" formControlName="urlFoto" >
+        </div> -->
+
+        <div class="form-floating mb-3 mt-5">
           <input type="text" formControlName="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Nombre completo</label>
+          <label for="floatingInput">Nombre</label>
         </div>
+
         <div class="form-floating mb-3">
           <input type="text" formControlName="usuario" class="form-control" id="floatingInput" placeholder="name@example.com">
           <label for="floatingInput">Nombre usuario</label>
         </div>
+
         <div class="form-floating mb-3">
           <input type="number" formControlName="identificacion" class="form-control" id="floatingInput" placeholder="name@example.com">
           <label for="floatingInput">Identificación</label>
         </div>
+
         <div class="form-floating mb-3">
           <input type="date" formControlName="fechaNacimiento" class="form-control" id="floatingInput" placeholder="name@example.com">
           <label for="floatingInput">Fecha de nacimiento</label>
         </div>
-        <div class="form-floating">
-          <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Contraseña</label>
-        </div>
-        <button type="submit"  class="btn btn-success w-100">Actualizar</button>
+
+        <button type="submit"  class="btn btn w-100 text-white" style="background-color: #39a900;">Actualizar</button>
 
       </form>
 
