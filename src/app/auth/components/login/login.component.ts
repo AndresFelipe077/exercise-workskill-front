@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
     this.login.login(userData).subscribe(
       (response: any) => {
         console.log(response);
+          // this.router.navigate(['/dashboard']);
+
         if(response.user.rol == "admin")
         {
           this.router.navigate(['/gestionar-casas']);

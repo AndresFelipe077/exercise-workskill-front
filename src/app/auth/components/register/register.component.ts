@@ -63,6 +63,8 @@ export class RegisterComponent implements OnInit {
           const tokenType = response.token_type;
 
           localStorage.setItem('access_token', accessToken);
+            // this.router.navigate(['/dashboard']);
+
           if (response.user.rol == "admin") {
             this.router.navigate(['/gestionar-casas']);
           }

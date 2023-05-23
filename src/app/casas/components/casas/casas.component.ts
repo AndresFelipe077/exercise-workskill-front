@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { CasasService } from 'src/app/service/casas.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { EstadoService } from 'src/app/service/estado.service';
@@ -10,6 +12,8 @@ import { EstadoService } from 'src/app/service/estado.service';
   styleUrls: ['./casas.component.css']
 })
 export class CasasComponent implements OnInit {
+
+  public imagePreview!: SafeUrl; //image de preview
 
   casasForm: FormGroup = new FormGroup({});
 
@@ -23,7 +27,10 @@ export class CasasComponent implements OnInit {
     private _casasService: CasasService,
     private formBuilder: FormBuilder,
     private _categoriasService:CategoriaService,
-    private _estadosService:EstadoService
+    private _estadosService:EstadoService,
+    private router:Router,
+    private sanitizer: DomSanitizer,
+
   ) { }
 
   selectedFile: File | null = null;
@@ -31,6 +38,29 @@ export class CasasComponent implements OnInit {
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
   }
+  
+  handleFileInput(event: any): void {
+
+    const files = event.target.files;
+  
+    if (files && files.length > 0) {
+      const file = files[0];
+  
+      const reader = new FileReader();
+  
+      reader.onload = (e: any) => {
+        this.imagePreview = this.sanitizer.bypassSecurityTrustUrl(e.target.result);
+      };
+  
+      reader.readAsDataURL(file);
+    }
+
+    console.log(this.onFileSelected(event));
+
+
+
+  }
+  
 
 
   ngOnInit(): void {
@@ -70,6 +100,7 @@ export class CasasComponent implements OnInit {
       this._casasService.guardarCasas(formData).subscribe(
         (response: any) => {
           console.log(response);
+          this.router.navigate(['/gestionar-casas']);
         },
         (error: any) => {
           console.log(error);

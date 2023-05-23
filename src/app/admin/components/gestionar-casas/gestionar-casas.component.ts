@@ -48,6 +48,7 @@ export class GestionarCasasComponent {
       this.casaService.eliminarCasa(this.selectedCasaId).subscribe(
         (data) => {
           console.log(data);
+          console.log("Se elimina la casa")
         },
         (error) => {
 
