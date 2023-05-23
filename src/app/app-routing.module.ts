@@ -21,7 +21,7 @@ const routes: Routes = [
 
   { path: 'profile', component: UserProfileComponent },
   
-  { path: 'casas', component: CasasComponent },
+  { path: 'agregar-casa', component: CasasComponent },
 
   { path: 'alquilar-casa/:id', component:AlquilarCasaComponent },
 

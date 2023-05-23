@@ -1,18 +1,17 @@
 <div class="container">
 
-  <div class="row">
-
-    <div class="col-sm-4">
-
-      <img src="" alt="Imagen aqui">
-
-      <button>eliminar</button>
-      <button>Actualizar</button>
-      <button>Crear</button>
-
-
-    </div>
-
+  <div class="text-center mt-3">
+    <button class="btn btn-success" [routerLink]="['/agregar-casa']">Crear casa</button>
   </div>
 
+  <div class="row">
+    <div class="col-sm-4 mt-3" *ngFor="let casa of casas">
+      <img [routerLink]="['/alquilar-casa/' + casa.id]" class="rounded" [src]="casa.urlFoto" alt="Imagen aquí" width="300px">
+      <p>descricion: {{ casa.descripcion }}</p>
+      <div class="button-group">
+        <button class="btn btn-danger" (click)="seleccionarCasa(casa.id)" >Eliminar</button>
+        <button class="btn btn-primary">Actualizar</button>
+      </div>
+    </div>
+  </div>
 </div>

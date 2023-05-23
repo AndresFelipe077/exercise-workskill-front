@@ -8,24 +8,37 @@ import { map } from 'rxjs';
 })
 export class CasasService {
 
+  apiStorage = 'http://localhost:8000/storage/';
+
   apiUrl = 'http://localhost:8000/api'; // Cambia esta URL por la URL de tu API
   url = this.apiUrl; // Ruta a tu función register en el backend
   baseUrl = 'http://localhost:8000'; // Cambiar según la configuración de tu servidor Laravel
 
-
   constructor(private http: HttpClient) { }
 
+  getCasas(): Observable<any[]> {
+    return this.http.get<any[]>(this.url + '/casas').
+      pipe(
+        map((data) => {
+          return data.map((casas) => {
+            casas.urlFoto = this.apiStorage + casas.urlFoto;
+            return casas;
+          }
+          )
+        })
+      );
+  }
+
   getCasasDisponibles(): Observable<any[]> {
-    return this.http.get<any[]>(this.url+'/casas-disponibles');
+    return this.http.get<any[]>(this.url + '/casas-disponibles');
   }
 
-  guardarCasas(casaData: any){
-    return this.http.post(this.url+'/casas', casaData);
+  guardarCasas(casaData: any) {
+    return this.http.post(this.url + '/casas', casaData);
   }
 
-  getCasaById(id:number)
-  {
-    return this.http.get(this.url+'/casas/' + id);
+  getCasaById(id: number) {
+    return this.http.get(this.url + '/casas/' + id);
   }
 
   getCasaCabanas(): Observable<any[]> {
@@ -75,7 +88,7 @@ export class CasasService {
         })
       );
   }
-  
+
   // alquilarCasa(id: number)
   // {
   //   return this.http.post(this.apiUrl + '/alquilar/', {id: id});
@@ -88,6 +101,11 @@ export class CasasService {
     });
 
     return this.http.post(url, alquilerData, { headers });
+  }
+
+  eliminarCasa(id:number)
+  {
+    return this.http.delete(this.url + '/casas/' + id);
   }
 
 }
