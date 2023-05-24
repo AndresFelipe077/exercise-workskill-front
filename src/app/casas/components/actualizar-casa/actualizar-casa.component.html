@@ -1,0 +1,63 @@
+<div>
+  <form [formGroup]="casa" (ngSubmit)="actualizarCasa()" action=""><!--[formGroup]="casasForm" (ngSubmit)="crearCasa()"-->
+
+    <div class="mx-auto text-center">
+      <img class="mx-auto text-center rounded-circle m-3" [src]="casaObject.urlFoto" alt="imagen de perfil"
+        height="100px" width="100px"><br>
+      <input class="mb-3" type="file" id="urlFoto" formControlName="urlFoto" ><!--(change)="handleFileInput($event)"-->
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" formControlName="direccion" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Direccion: {{ casaObject.direccion }}</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="costoAlquiler" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Costo de alquiler {{ casaObject.alquiler }}</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="ancho" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Ancho de la casa {{ casaObject.ancho }}</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="largo" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Largo de la casa {{ casaObject.largo }}</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="numeroPisos" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Número de pisos {{ casaObject.numeroPisos }}</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" formControlName="descripcion" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">descripcion {{ casaObject.descripcion }}</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" formControlName="capacidad" class="form-control" id="floatingInput"
+        placeholder="name@example.com">
+      <label for="floatingInput">Capacidad {{ casaObject.capacidad }}</label>
+    </div>
+
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="idCategoria">
+      <option [value]="null" disabled selected>Categoría</option>
+      <option *ngFor="let categoria of categorias" [value]="categoria.id" [selected]="categoria.id === casaObject.idCategoria">
+        {{ categoria.nombre }}
+      </option>
+    </select>
+    
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="idEstado">
+      <option [value]="null" disabled selected>Estado</option>
+      <option *ngFor="let estado of estados" [value]="estado.id" [selected]="estado.id === casaObject.idEstado">
+        {{ estado.nombre }}
+      </option>
+    </select>
+    
+
+    <button type="submit" class="btn btn-success w-100">Actualizar Casa</button>
+
+  </form>
+</div>

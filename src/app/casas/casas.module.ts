@@ -13,6 +13,7 @@ import { AlquilarCasaComponent } from './components/alquilar-casa/alquilar-casa.
 import { RouterLink } from '@angular/router';
 import { MisCasasComponent } from './components/mis-casas/mis-casas.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { ActualizarCasaComponent } from './components/actualizar-casa/actualizar-casa.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
     CasasPrefabricadasComponent,
     AlquilarCasaComponent,
     MisCasasComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    ActualizarCasaComponent
   ],
   imports: [
     CommonModule,

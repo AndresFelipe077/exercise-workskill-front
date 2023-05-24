@@ -1,0 +1,15 @@
+<div class="container rounded" *ngFor="let chat of chats">
+  <strong>{{ chat.user }}:</strong> {{ chat.mensajes }}
+</div>
+
+<div class="row">
+  <div class="col-sm-10">
+    <div class="form-floating mb-3">
+      <input type="text" [(ngModel)]="newChat" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Escribir ...</label>
+    </div>
+  </div>
+  <div class="col-sm-2">
+    <button class="btn btn-success" (click)="sendChat()">Enviar</button>
+  </div>
+</div>

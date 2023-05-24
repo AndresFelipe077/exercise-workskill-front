@@ -20,15 +20,15 @@ export class UserProfileComponent implements OnInit {
   fotoProfile: any;
 
   onSelectedFile(event: any) {
-  this.selectedFile = event.target.files[0];
+    this.selectedFile = event.target.files[0];
 
-  console.log('Archivo seleccionado:', this.selectedFile);
-}
+    console.log('Archivo seleccionado:', this.selectedFile);
+  }
 
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.userData = this.userService.getUserData();
@@ -51,14 +51,14 @@ export class UserProfileComponent implements OnInit {
         identificacion: this.userProfile.get('identificacion')!.value,
         fechaNacimiento: this.userProfile.get('fechaNacimiento')!.value
       };
-  
+
       this.userService.actualizarProfile(this.userData.user.id, data).subscribe(
         (response: any) => {
           console.log('Perfil actualizado:', response);
 
-            this.fotoProfile = response;
+          this.fotoProfile = response;
 
-            this.fotoProfile.urlFoto = this.baseUrl + this.fotoProfile.urlFoto;
+          this.fotoProfile.urlFoto = this.baseUrl + this.fotoProfile.urlFoto;
 
 
         },
@@ -69,6 +69,6 @@ export class UserProfileComponent implements OnInit {
       );
     }
   }
-  
+
 
 }

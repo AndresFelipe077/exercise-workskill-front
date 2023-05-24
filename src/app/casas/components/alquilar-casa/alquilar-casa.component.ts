@@ -57,6 +57,7 @@ export class AlquilarCasaComponent implements OnInit {
   getCasaById() {
     const baseUrl = 'http://localhost:8000'; // Cambiar según la configuración de tu servidor Laravel
     const id = this.routeId.snapshot.paramMap.get('id'); // Obtener el ID de la URL
+    
     const apiUrl = `${baseUrl}/api/casas/${id}`;
     this.casaService.getCasaById(Number(id)).subscribe(
       response => {
@@ -64,7 +65,7 @@ export class AlquilarCasaComponent implements OnInit {
         this.casa.urlFoto = `${baseUrl}${this.casa.urlFoto}`;
       },
       error => {
-        console.error(error);
+        console.log(error);
       }
     );
   }

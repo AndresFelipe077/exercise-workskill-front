@@ -103,8 +103,14 @@ export class CasasService {
     return this.http.post(url, alquilerData, { headers });
   }
 
-  eliminarCasa(id:number)
-  {
+
+  actualizarCasa(id: number, casaData: any): Observable<any> {
+    const url = this.url + '/casas/' + id;
+    return this.http.put(url, casaData);
+  }
+
+
+  eliminarCasa(id: number) {
     return this.http.delete(this.url + '/casas/' + id);
   }
 

@@ -12,6 +12,8 @@ import { CasasFamiliarComponent } from './casas/components/casas-familiar/casas-
 import { CasasPrefabricadasComponent } from './casas/components/casas-prefabricadas/casas-prefabricadas.component';
 import { UserProfileComponent } from './auth/components/user-profile/user-profile.component';
 import { GestionarCasasComponent } from './admin/components/gestionar-casas/gestionar-casas.component';
+import { ActualizarCasaComponent } from './casas/components/actualizar-casa/actualizar-casa.component';
+import { ChatsComponent } from './chat/components/chats/chats.component';
 
 const routes: Routes = [
 
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'profile', component: UserProfileComponent },
   
   { path: 'agregar-casa', component: CasasComponent },
+
+  { path: 'actualizar-casa/:id', component: ActualizarCasaComponent },
 
   { path: 'alquilar-casa/:id', component:AlquilarCasaComponent },
 
@@ -34,6 +38,8 @@ const routes: Routes = [
   { path: 'casas-prefabricadas', component:CasasPrefabricadasComponent},
 
   { path: 'gestionar-casas', component: GestionarCasasComponent },
+
+  { path: 'chat', component: ChatsComponent },
 
   { path: '', component: IndexComponent },
   { path: '**', component: IndexComponent },

@@ -19,6 +19,9 @@ import { CasasPrefabricadasComponent } from './casas/components/casas-prefabrica
 import { CasasFamiliarComponent } from './casas/components/casas-familiar/casas-familiar.component';
 import { UserProfileComponent } from './auth/components/user-profile/user-profile.component';
 import { GestionarCasasComponent } from './admin/components/gestionar-casas/gestionar-casas.component';
+import { ActualizarCasaComponent } from './casas/components/actualizar-casa/actualizar-casa.component';
+import { ChatsComponent } from './chat/components/chats/chats.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { GestionarCasasComponent } from './admin/components/gestionar-casas/gest
     CasasEcologicasComponent,
     CasasPrefabricadasComponent,
     UserProfileComponent,
-    GestionarCasasComponent
+    GestionarCasasComponent,
+    ActualizarCasaComponent,
+    ChatsComponent,
+    
     
   ],
   imports: [

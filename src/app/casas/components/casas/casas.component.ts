@@ -60,8 +60,6 @@ export class CasasComponent implements OnInit {
 
 
   }
-  
-
 
   ngOnInit(): void {
 

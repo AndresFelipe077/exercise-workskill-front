@@ -30,7 +30,8 @@ export class GestionarCasasComponent {
 
   seleccionarCasa(id: number) {
     this.selectedCasaId = id;
-    console.log(this.selectedCasaId)
+    this.eliminarCasa(this.selectedCasaId);
+    console.log("numero de casa " + this.selectedCasaId)
   }
 
   getCasas() {
@@ -44,8 +45,8 @@ export class GestionarCasasComponent {
     );
   }
 
-  eliminarCasa() {
-      this.casaService.eliminarCasa(this.selectedCasaId).subscribe(
+  eliminarCasa(idCasa: number) {
+      this.casaService.eliminarCasa(idCasa).subscribe(
         (data) => {
           console.log(data);
           console.log("Se elimina la casa")
